@@ -1,0 +1,83 @@
+<!--
+#BatteryV1.0.html
+#ByNiirmaalTwaatii
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style>
+    div{
+    display:flex;
+    }
+    section{
+    text-align:center;
+    }
+    .g{
+    width:100px;
+    height:100px;
+    background:green;
+    border:3px solid black;
+    }
+    .r{
+    width:100px;
+    height:100px;
+    background:red;
+    border:3px solid black;
+    }
+    button{
+    width:100px;
+    height:40px;
+    }//TwN87
+    </style>
+</head>
+<body>
+    <h1 align="center">Battery</h1>
+    <div>
+        <div class="g" id="1"></div>
+        <div class="g" id="2"></div>
+        <div class="g" id="3"></div>
+        <div class="g" id="4"></div>
+        <div class="g" id="5"></div>
+    </div>
+    <br/>
+    <article>
+    <h3>Status:- <span id="b">100</span>%</h3>
+    </article>
+    <br/>
+    <section>
+        <button onclick="ocl()">Use</button>
+        <button onclick="ocr()">Charge</button>
+    </section>
+    <script>
+    const msg = "Welcome,\nYou are given a fully charged Battery.\nYou can either Use it or Charge it.\nBut if you use it at 0% battery it is never gonna charge !\n\nBy Niirmaal Twaatii";
+    alert(msg);
+    var n = 6;
+    var b=100;
+    function status(){//TwN87
+    var btry=document.getElementById("b");
+    btry.innerHTML=b;
+    }
+    setInterval(status,100);
+    function gtr(i){//TwN87
+    div = document.getElementById(i);
+    div.setAttribute("class","r");
+    }
+    function rtg(i){
+    div = document.getElementById(i);
+    div.setAttribute("class","g");
+    }
+    function ocl(){
+    n-=1;
+    gtr(n);
+    b-=20;
+    }
+    function ocr(){
+    rtg(n)
+    n+=1;
+    b+=20;
+    }
+    </script>
+</body>
+</html>
